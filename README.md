@@ -30,5 +30,15 @@ success:function(result){
     let name = result[1];
 }
 
+error:function(error){
+	//照相机开启异常/图片损坏，请重新选择/拍照已取消/图片本地存储路径丢失
+    alert(error)
+}
+
 ```
 
+#### 使用反馈
+
+- 作者：朱凤丽
+- 邮件：2469069775@qq.com
+- 时间：2020-03-02 18:00
