@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.custom.julyum.camera" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>camera</name>
+    <js-module name="camera" src="www/camera.js">
+        <clobbers target="cordova.plugins.camera" />
+    </js-module>
+    <platform name="android">
+        <!-- 相机插件 -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="camera">
+                <param name="android-package" value="com.custom.julyum.Camera" />
+            </feature>
+        </config-file>
+
+        <!-- 权限 -->
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.CAMERA" />
+        </config-file>
+
+        <!-- 适配sdk24及以上 -->
+        <config-file target="AndroidManifest.xml" parent="application">
+            <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/camera_file_paths" />
+            </provider>
+        </config-file>
+
+        <!-- 项目文件 -->
+        <source-file src="src/android/xml/camera_file_paths.xml" target-dir="res/xml" />
+        <source-file src="src/android/Camera.java" target-dir="src/com/custom/julyum" />
+        <source-file src="src/android/CameraUtils.java" target-dir="src/com/custom/julyum" />
+        
+    </platform>
+</plugin>

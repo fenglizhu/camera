@@ -1,0 +1,15 @@
+{
+  "name": "com.custom.julyum.camera",
+  "version": "1.0.0",
+  "description": "this is a plugin about camera.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "cordova",
+    "camera"
+  ],
+  "author": "zhufengli",
+  "license": "ISC"
+}
