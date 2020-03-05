@@ -1,9 +1,11 @@
-# camera
-A camera plugin about Android.
+# 使用说明
+插件名：camera
 
-版本1.0.0
+版本：1.0.0
 
-#### 使用说明
+功能：拍照/选取照片
+
+JS调用
 
 ```
 camera:function(){
@@ -40,5 +42,5 @@ error:function(error){
 #### 使用反馈
 
 - 作者：朱凤丽
-- 邮件：2469069775@qq.com
+- 邮件：13265049537@139.com
 - 时间：2020-03-02 18:00
